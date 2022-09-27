@@ -36,4 +36,5 @@ class Occurrence(viewsets.ModelViewSet):
     queryset = Occurrence.objects.all().order_by("-id")
     serializer_class = OccurrenceSerializer 
     permission_classes = [permissions.IsAuthenticated]
-    
+
+ 
