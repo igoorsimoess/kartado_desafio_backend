@@ -18,9 +18,13 @@ from django.urls import include, path
 from rest_framework import routers
 from apps.occurrences import views
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 router = routers.DefaultRouter()
 router.register(r"roads", views.RoadViewSet)
 router.register(r"status", views.StatusViewSet)
+router.register(r"occurrence", views.Occurrence)
 # add new code below
 
 # add new code above
@@ -31,4 +35,4 @@ urlpatterns = [
     path(
         "api-auth/", include("rest_framework.urls", namespace="rest_framework")
     ),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # specifies the route django will search when the occurrence_image field is called

@@ -3,6 +3,8 @@ venv/
 .env
 .envrc
 .vscode/
+kartado_env
+media
 
 # Python stuff
 *__pycache__*
